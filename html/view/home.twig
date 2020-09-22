@@ -1,0 +1,31 @@
+{% extends "base.twig" %}
+
+{% block title %}Startseite{% endblock %}
+
+{% block content %}
+    <h1 class="my-4">Filmübersicht</h1>
+    <table class="table">
+        <thead class="thead-light">
+            <tr>
+                <th>Titel</th>
+                <th>Produzent</th>
+                <th class="text-right">Preis</th>
+                <th class="text-right">Aktionen</th>
+            </tr>
+        </thead>
+        <tbody>
+            {% for movie in movies %}
+                <tr>
+                    <td>{{ movie.title }}</td>
+                    <td>{{ movie.producer }}</td>
+                    <td class="text-right">{{ movie.price|number_format(2, ',') }} &euro;</td>
+                    <td class="text-right">
+                        <a href="?doc=view&id={{ movie.id }}">Ansehen</a> |
+                        <a href="?doc=edit&id={{ movie.id }}">Bearbeiten</a> |
+                        <a href="?doc=delete&id={{ movie.id }}">Löschen</a>
+                    </td>
+                </tr>
+            {% endfor %}
+        </tbody>
+    </table>
+{% endblock %}
