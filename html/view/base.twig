@@ -1,4 +1,5 @@
-{% set application_name = 'MMgmt Filmdatenbank' %}
+{% set application_name = 'MMgmt' %}
+{% set application_name_long = "#{application_name} Filmdatenbank" %}
 
 <!DOCTYPE html>
 <html lang="de">
@@ -43,7 +44,7 @@
         {% block content %}{% endblock %}
     </main>
     <footer class="mt-5">
-        <p class="text-center">MMgmt Filmdatenbank. &copy; 2020 David J Albers. Alle Rechte vorbehalten.</p>
+        <p class="text-center">{{ application_name_long }}<br>&copy; 2020 David J Albers. Alle Rechte vorbehalten.</p>
     </footer>
 </body>
 </html>
